@@ -21,6 +21,9 @@ public class TodoMenu : IClickableMenu
     private const int ItemHeight = 28;
     private const int InputAreaHeight = 50;
 
+    private const int exitButtonWidth = 32;
+    private const int exitButtonHeight = 32;
+
     private ClickableTextureComponent exitButton;
     
     private int scrollOffset = 0; 
@@ -47,7 +50,7 @@ public class TodoMenu : IClickableMenu
  
         // Exit Button
         exitButton = new ClickableTextureComponent("exit",
-            new Rectangle(xPositionOnScreen + width, yPositionOnScreen, 32, 32),
+            new Rectangle(xPositionOnScreen + width, yPositionOnScreen, exitButtonWidth, exitButtonHeight),
             null,
             "Exit",
             Game1.mouseCursors,
@@ -176,6 +179,14 @@ public class TodoMenu : IClickableMenu
         int maxVisibleItems = (height - TitleHeight - InputAreaHeight - Padding * 3) / ItemHeight;
         int maxScroll = Math.Max(0, _todos.Count - maxVisibleItems);
         scrollOffset = Math.Clamp(scrollOffset + direction, 0, maxScroll);
+    }
+
+    public override void receiveLeftClick(int x, int y, bool playSound = true)
+    {
+        if (exitButton.containsPoint(x, y))
+        {
+            exitThisMenu(); 
+        }
     }
     
     protected override void cleanupBeforeExit()
