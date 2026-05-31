@@ -1,0 +1,8 @@
+F:\Coding\C#\SMAPIMod\SMAPIMod\SMAPIMod\bin\Debug\net6.0\SMAPIMod.deps.json
+F:\Coding\C#\SMAPIMod\SMAPIMod\SMAPIMod\bin\Debug\net6.0\SMAPIMod.dll
+F:\Coding\C#\SMAPIMod\SMAPIMod\SMAPIMod\obj\Debug\net6.0\SMAPIMod.csproj.AssemblyReference.cache
+F:\Coding\C#\SMAPIMod\SMAPIMod\SMAPIMod\obj\Debug\net6.0\SMAPIMod.GeneratedMSBuildEditorConfig.editorconfig
+F:\Coding\C#\SMAPIMod\SMAPIMod\SMAPIMod\obj\Debug\net6.0\SMAPIMod.AssemblyInfoInputs.cache
+F:\Coding\C#\SMAPIMod\SMAPIMod\SMAPIMod\obj\Debug\net6.0\SMAPIMod.AssemblyInfo.cs
+F:\Coding\C#\SMAPIMod\SMAPIMod\SMAPIMod\obj\Debug\net6.0\SMAPIMod.csproj.CoreCompileInputs.cache
+F:\Coding\C#\SMAPIMod\SMAPIMod\SMAPIMod\obj\Debug\net6.0\SMAPIMod.dll

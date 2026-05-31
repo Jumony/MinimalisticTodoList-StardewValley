@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "0wfaC7StEEI=",
+  "success": true,
+  "projectFilePath": "F:\\Coding\\C#\\SMAPIMod\\SMAPIMod\\TodoListMod\\TodoListMod.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\fireb\\.nuget\\packages\\pathoschild.stardew.modbuildconfig\\4.4.0\\pathoschild.stardew.modbuildconfig.4.4.0.nupkg.sha512"
+  ],
+  "logs": []
+}

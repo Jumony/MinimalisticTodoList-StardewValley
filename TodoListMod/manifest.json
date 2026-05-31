@@ -1,0 +1,10 @@
+﻿{
+  "Name": "TodoListMod",
+  "Author": "Jumony",
+  "Version": "1.0.0",
+  "Description": "A Minimalistic Todo List Mod",
+  "UniqueID": "Jumony.TodoListMod",
+  "EntryDll": "TodoListMod.dll",
+  "MinimumApiVersion": "4.0.0",
+  "UpdateKeys": []
+}

@@ -1,0 +1,8 @@
+F:\Coding\C#\SMAPIMod\SMAPIMod\TodoListMod\bin\Debug\net6.0\TodoListMod.deps.json
+F:\Coding\C#\SMAPIMod\SMAPIMod\TodoListMod\bin\Debug\net6.0\TodoListMod.dll
+F:\Coding\C#\SMAPIMod\SMAPIMod\TodoListMod\obj\Debug\net6.0\TodoListMod.csproj.AssemblyReference.cache
+F:\Coding\C#\SMAPIMod\SMAPIMod\TodoListMod\obj\Debug\net6.0\TodoListMod.GeneratedMSBuildEditorConfig.editorconfig
+F:\Coding\C#\SMAPIMod\SMAPIMod\TodoListMod\obj\Debug\net6.0\TodoListMod.AssemblyInfoInputs.cache
+F:\Coding\C#\SMAPIMod\SMAPIMod\TodoListMod\obj\Debug\net6.0\TodoListMod.AssemblyInfo.cs
+F:\Coding\C#\SMAPIMod\SMAPIMod\TodoListMod\obj\Debug\net6.0\TodoListMod.csproj.CoreCompileInputs.cache
+F:\Coding\C#\SMAPIMod\SMAPIMod\TodoListMod\obj\Debug\net6.0\TodoListMod.dll
