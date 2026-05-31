@@ -8,8 +8,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a7baf7b4-ec5c-47c4-9219-4d2ac66c1a06" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.SMAPIMod/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TodoListMod.sln.DotSettings.user" beforeDir="false" afterPath="$PROJECT_DIR$/TodoListMod.sln.DotSettings.user" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.SMAPIMod/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SMAPIMod/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TodoListMod/TodoMenu.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TodoListMod/TodoMenu.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TodoListMod/bin/Debug/net6.0/TodoListMod 1.0.0.zip" beforeDir="false" afterPath="$PROJECT_DIR$/TodoListMod/bin/Debug/net6.0/TodoListMod 1.0.0.zip" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TodoListMod/bin/Debug/net6.0/TodoListMod.dll" beforeDir="false" afterPath="$PROJECT_DIR$/TodoListMod/bin/Debug/net6.0/TodoListMod.dll" afterDir="false" />
@@ -47,21 +46,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    ".NET Project.SMAPIMod.executor": "Debug",
-    ".NET Project.TodoListMod.executor": "Debug",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;.NET Project.SMAPIMod.executor&quot;: &quot;Debug&quot;,
+    &quot;.NET Project.TodoListMod.executor&quot;: &quot;Debug&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="TodoListMod" type="DotNetProject" factoryName=".NET Project">
       <option name="EXE_PATH" value="E:/MySteamLibrary/steamapps/steamapps/common/Stardew Valley/StardewModdingAPI.exe" />
@@ -98,7 +97,7 @@
       <workItem from="1780077279769" duration="7560000" />
       <workItem from="1780111956110" duration="2575000" />
       <workItem from="1780242283319" duration="3425000" />
-      <workItem from="1780253969952" duration="1958000" />
+      <workItem from="1780253969952" duration="4083000" />
     </task>
     <servers />
   </component>

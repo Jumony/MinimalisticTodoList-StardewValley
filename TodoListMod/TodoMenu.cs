@@ -21,8 +21,7 @@ public class TodoMenu : IClickableMenu
     private const int ItemHeight = 28;
     private const int InputAreaHeight = 50;
 
-    private const int exitButtonWidth = 32;
-    private const int exitButtonHeight = 32;
+    private const float exitButtonScale = 4f;
 
     private ClickableTextureComponent exitButton;
     
@@ -50,11 +49,11 @@ public class TodoMenu : IClickableMenu
  
         // Exit Button
         exitButton = new ClickableTextureComponent("exit",
-            new Rectangle(xPositionOnScreen + width, yPositionOnScreen, exitButtonWidth, exitButtonHeight),
+            new Rectangle(xPositionOnScreen + width, yPositionOnScreen, (int)(12 * exitButtonScale), (int)(12 * exitButtonScale)),  // 12x12 texture * 4f scale = 48 pixels
             null,
             "Exit",
             Game1.mouseCursors,
-            new Rectangle(338, 494, 12, 12), 4f);
+            new Rectangle(338, 494, 12, 12), exitButtonScale);
         
         Game1.keyboardDispatcher.Subscriber = _inputBox;
     }
@@ -187,6 +186,14 @@ public class TodoMenu : IClickableMenu
         {
             exitThisMenu(); 
         }
+    }
+
+    public override void performHoverAction(int x, int y)
+    {
+        base.performHoverAction(x, y);
+
+        float targetScale = exitButton.containsPoint(x, y) ? 4.5f : 4f;
+        exitButton.scale = MathHelper.Lerp(exitButton.scale, targetScale, 0.2f);
     }
     
     protected override void cleanupBeforeExit()
