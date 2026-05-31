@@ -20,11 +20,13 @@ public class TodoMenu : IClickableMenu
     private const int TitleHeight = 40;
     private const int ItemHeight = 28;
     private const int InputAreaHeight = 50;
-
+    private const int ItemStartPosOffset = 10;  // Small gap between title divider and first item
+    
     private const float exitButtonScale = 4f;
     private const float deleteTaskButtonScale = 2f;
 
     private ClickableTextureComponent exitButton;
+    private List<ClickableTextureComponent> deleteTaskButtons = new();
     
     private int scrollOffset = 0; 
  
@@ -55,6 +57,7 @@ public class TodoMenu : IClickableMenu
             "Exit",
             Game1.mouseCursors,
             new Rectangle(338, 494, 12, 12), exitButtonScale);
+        RebuildDeleteButtons();
         
         Game1.keyboardDispatcher.Subscriber = _inputBox;
     }
@@ -89,7 +92,7 @@ public class TodoMenu : IClickableMenu
         exitButton.draw(b);
         
         // Todo items
-        int itemY = dividerY + 10;
+        int itemY = dividerY + ItemStartPosOffset;
         int maxVisibleItems = (height - TitleHeight - InputAreaHeight - Padding * 3) / ItemHeight;
         
         if (_todos.Count == 0)
@@ -121,15 +124,12 @@ public class TodoMenu : IClickableMenu
                 b.DrawString(Game1.smallFont, display,
                     new Vector2(xPositionOnScreen + Padding + 16, itemY),
                     Game1.textColor);
-                
-                // Delete Task Button
-                ClickableTextureComponent deleteTaskButton = new ClickableTextureComponent("delete",
-                    new Rectangle(xPositionOnScreen + width - 48, itemY + 8, (int)(12 * deleteTaskButtonScale), (int)(12 * deleteTaskButtonScale)),  // 12x12 texture * 3f scale = 36 pixels
-                    null,
-                    "Delete",
-                    Game1.mouseCursors,
-                    new Rectangle(338, 494, 12, 12), deleteTaskButtonScale);
-                deleteTaskButton.draw(b);
+
+                int buttonIndex = i - scrollOffset;
+                if (buttonIndex < deleteTaskButtons.Count)
+                {
+                    deleteTaskButtons[buttonIndex].draw(b);
+                }
                 
                 itemY += ItemHeight;
             }
@@ -185,6 +185,7 @@ public class TodoMenu : IClickableMenu
                 {
                     _todos.Add(text);
                     _inputBox.Text = "";
+                    RebuildDeleteButtons();
                 }
             }
             else if (key == Keys.Escape)
@@ -210,13 +211,31 @@ public class TodoMenu : IClickableMenu
         int maxScroll = Math.Max(0, _todos.Count - maxVisibleItems);
 
         scrollOffset = Math.Clamp(scrollOffset - (direction / 120), 0, maxScroll);
+        // RebuildDeleteButtons();
     }
 
     public override void receiveLeftClick(int x, int y, bool playSound = true)
     {
         if (exitButton.containsPoint(x, y))
         {
-            exitThisMenu(); 
+            exitThisMenu();
+            return;
+        }
+        
+        for (int i = 0; i < deleteTaskButtons.Count; i++)
+        {
+            if (deleteTaskButtons[i].containsPoint(x, y))
+            {
+                int todoIndex = i + scrollOffset;
+                _todos.RemoveAt(todoIndex);
+                
+                int maxVisibleItems = (height - TitleHeight - InputAreaHeight - Padding * 3) / ItemHeight;
+                int maxScroll = Math.Max(0, _todos.Count - maxVisibleItems);
+                scrollOffset = Math.Clamp(scrollOffset, 0, maxScroll);
+                
+                RebuildDeleteButtons();
+                return;
+            }
         }
     }
 
@@ -253,6 +272,32 @@ public class TodoMenu : IClickableMenu
             text = text[..^1]; // Gettin' fancy wit it
  
         return text + "...";
+    }
+
+    private void RebuildDeleteButtons()
+    {
+        deleteTaskButtons.Clear();
+
+        int dividerY = yPositionOnScreen + TitleHeight + Padding;
+        int itemY = dividerY + ItemStartPosOffset;
+
+        for (int i = scrollOffset; i < _todos.Count; i++)
+        {
+            // Don't build buttons for items that go off the menu
+            if (itemY + ItemHeight > yPositionOnScreen + height - InputAreaHeight - 20)
+            {
+                break;
+            }
+            
+            deleteTaskButtons.Add(new ClickableTextureComponent("delete_" + i,
+                new Rectangle(xPositionOnScreen + width - 48, itemY + 8, (int)(12 * deleteTaskButtonScale), (int)(12 * deleteTaskButtonScale)),
+                null,
+                "Delete",
+                Game1.mouseCursors,
+                new Rectangle(338, 494, 12, 12), deleteTaskButtonScale));
+            
+            itemY += ItemHeight;
+        }
     }
 }
  
