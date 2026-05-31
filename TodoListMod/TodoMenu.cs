@@ -14,7 +14,7 @@ namespace SMAPIMod;
 public class TodoMenu : IClickableMenu
 {
     private readonly List<string> _todos = new();
-    private TextBox _inputBox;
+    private readonly TextBox _inputBox;
  
     private const int Padding = 20;
     private const int TitleHeight = 40;
@@ -30,7 +30,7 @@ public class TodoMenu : IClickableMenu
     private readonly ClickableTextureComponent _exitButton;
     private readonly List<ClickableTextureComponent> _deleteTaskButtons = new();
     
-    private int scrollOffset = 0; 
+    private int _scrollOffset = 0; 
  
     public TodoMenu() : base(0, 0, 420, 500)
     {
@@ -106,7 +106,7 @@ public class TodoMenu : IClickableMenu
         }
         else
         {
-            for (int i = scrollOffset; i < _todos.Count; i++)
+            for (int i = _scrollOffset; i < _todos.Count; i++)
             {
                 // If the number of items goes off the box 
                 if (itemY + ItemHeight > yPositionOnScreen + height - InputAreaHeight - 20)
@@ -128,7 +128,7 @@ public class TodoMenu : IClickableMenu
                     new Vector2(xPositionOnScreen + Padding + 16, itemY),
                     Game1.textColor);
 
-                int buttonIndex = i - scrollOffset;
+                int buttonIndex = i - _scrollOffset;
                 if (buttonIndex < _deleteTaskButtons.Count)
                 {
                     _deleteTaskButtons[buttonIndex].draw(b);
@@ -138,7 +138,7 @@ public class TodoMenu : IClickableMenu
             }
 
             // If player scrolls down or is at the bottom
-            if (scrollOffset > 0)
+            if (_scrollOffset > 0)
             {
                 b.DrawString(Game1.smallFont, "^",
                     new Vector2(xPositionOnScreen + width - Padding - 16, dividerY + 10),
@@ -146,7 +146,7 @@ public class TodoMenu : IClickableMenu
             }
 
             // If player is all the way at the top
-            if (scrollOffset < Math.Max(0, _todos.Count - maxVisibleItems))
+            if (_scrollOffset < Math.Max(0, _todos.Count - maxVisibleItems))
             {
                 b.DrawString(Game1.smallFont, "v",
                     new Vector2(xPositionOnScreen + width - Padding - 16,
@@ -213,7 +213,7 @@ public class TodoMenu : IClickableMenu
         int maxVisibleItems = (height - TitleHeight - InputAreaHeight - Padding * 3) / ItemHeight;
         int maxScroll = Math.Max(0, _todos.Count - maxVisibleItems);
 
-        scrollOffset = Math.Clamp(scrollOffset - (direction / 120), 0, maxScroll);
+        _scrollOffset = Math.Clamp(_scrollOffset - (direction / 120), 0, maxScroll);
         // RebuildDeleteButtons();
     }
 
@@ -229,12 +229,12 @@ public class TodoMenu : IClickableMenu
         {
             if (_deleteTaskButtons[i].containsPoint(x, y))
             {
-                int todoIndex = i + scrollOffset;
+                int todoIndex = i + _scrollOffset;
                 _todos.RemoveAt(todoIndex);
                 
                 int maxVisibleItems = (height - TitleHeight - InputAreaHeight - Padding * 3) / ItemHeight;
                 int maxScroll = Math.Max(0, _todos.Count - maxVisibleItems);
-                scrollOffset = Math.Clamp(scrollOffset, 0, maxScroll);
+                _scrollOffset = Math.Clamp(_scrollOffset, 0, maxScroll);
                 
                 RebuildDeleteButtons();
                 return;
@@ -284,7 +284,7 @@ public class TodoMenu : IClickableMenu
         int dividerY = yPositionOnScreen + TitleHeight + Padding;
         int itemY = dividerY + ItemStartPosOffset;
 
-        for (int i = scrollOffset; i < _todos.Count; i++)
+        for (int i = _scrollOffset; i < _todos.Count; i++)
         {
             // Don't build buttons for items that go off the menu
             if (itemY + ItemHeight > yPositionOnScreen + height - InputAreaHeight - 20)
