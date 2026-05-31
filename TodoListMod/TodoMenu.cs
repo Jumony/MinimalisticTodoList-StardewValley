@@ -89,6 +89,8 @@ public class TodoMenu : IClickableMenu
         
         // Todo items
         int itemY = dividerY + 10;
+        int maxVisibleItems = (height - TitleHeight - InputAreaHeight - Padding * 3) / ItemHeight;
+        
         if (_todos.Count == 0)
         {
             b.DrawString(Game1.smallFont, "Nothing here yet...",
@@ -97,29 +99,49 @@ public class TodoMenu : IClickableMenu
         }
         else
         {
-            foreach (string todo in _todos)
+            for (int i = scrollOffset; i < _todos.Count; i++)
             {
-                b.Draw(Game1.staminaRect,
-                    new Rectangle(xPositionOnScreen + Padding, itemY + 8, 6, 6),
-                    Color.SaddleBrown);
- 
-                string display = TruncateToFit(todo, width - Padding * 2 - 16);
-                b.DrawString(Game1.smallFont, display,
-                    new Vector2(xPositionOnScreen + Padding + 16, itemY),
-                    Game1.textColor);
- 
-                itemY += ItemHeight;
- 
-                if (itemY > yPositionOnScreen + height - InputAreaHeight - 20)
+                // If the number of items goes off the box 
+                if (itemY + ItemHeight > yPositionOnScreen + height - InputAreaHeight - 20)
                 {
                     b.DrawString(Game1.smallFont, "...",
                         new Vector2(xPositionOnScreen + Padding + 16, itemY),
                         Color.Gray);
                     break;
                 }
+                
+                // Bullet point
+                b.Draw(Game1.staminaRect,
+                    new Rectangle(xPositionOnScreen + Padding, itemY + 8, 6, 6),
+                    Color.SaddleBrown);
+ 
+                // Task string
+                string display = TruncateToFit(_todos[i], width - Padding * 2 - 16);
+                b.DrawString(Game1.smallFont, display,
+                    new Vector2(xPositionOnScreen + Padding + 16, itemY),
+                    Game1.textColor);
+                
+                itemY += ItemHeight;
+            }
+
+            // If player scrolls down or is at the bottom
+            if (scrollOffset > 0)
+            {
+                b.DrawString(Game1.smallFont, "^",
+                    new Vector2(xPositionOnScreen + width - Padding - 16, dividerY + 10),
+                    Color.SaddleBrown * 0.6f);
+            }
+
+            // If player is all the way at the top
+            if (scrollOffset < Math.Max(0, _todos.Count - maxVisibleItems))
+            {
+                b.DrawString(Game1.smallFont, "v",
+                    new Vector2(xPositionOnScreen + width - Padding - 16,
+                        yPositionOnScreen + height - InputAreaHeight - 30),
+                    Color.SaddleBrown * 0.6f);
             }
         }
- 
+        
         // Divider above input
         int inputDividerY = yPositionOnScreen + height - InputAreaHeight - 8;
         b.Draw(Game1.staminaRect,
@@ -174,10 +196,10 @@ public class TodoMenu : IClickableMenu
 
     public override void receiveScrollWheelAction(int direction)
     {
-        // Scroll the todo list when mouse wheel is used
         int maxVisibleItems = (height - TitleHeight - InputAreaHeight - Padding * 3) / ItemHeight;
         int maxScroll = Math.Max(0, _todos.Count - maxVisibleItems);
-        scrollOffset = Math.Clamp(scrollOffset + direction, 0, maxScroll);
+
+        scrollOffset = Math.Clamp(scrollOffset - (direction / 120), 0, maxScroll);
     }
 
     public override void receiveLeftClick(int x, int y, bool playSound = true)
