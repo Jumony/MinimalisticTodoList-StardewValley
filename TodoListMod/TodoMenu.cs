@@ -21,6 +21,8 @@ public class TodoMenu : IClickableMenu
     private const int ItemHeight = 28;
     private const int InputAreaHeight = 50;
     private const int ItemStartPosOffset = 10;  // Small gap between title divider and first item
+
+    private const int TextLimit = 27;
     
     private const float exitButtonScale = 4f;
     private const float deleteTaskButtonScale = 2f;
@@ -47,7 +49,8 @@ public class TodoMenu : IClickableMenu
             // Push Y up enough that the texture renders fully inside the menu box
             Y = yPositionOnScreen + height - InputAreaHeight + 4,
             Width = width - Padding * 2,
-            Selected = true
+            Selected = true,
+            textLimit = TextLimit,
         };
  
         // Exit Button
@@ -120,7 +123,7 @@ public class TodoMenu : IClickableMenu
                     Color.SaddleBrown);
  
                 // Task string
-                string display = TruncateToFit(_todos[i], width - Padding * 2 - 16);
+                string display = TruncateToFit(_todos[i], width - Padding * 2 - (int)(12 * deleteTaskButtonScale) - 16); // Account for delete button width and some spacing;
                 b.DrawString(Game1.smallFont, display,
                     new Vector2(xPositionOnScreen + Padding + 16, itemY),
                     Game1.textColor);
