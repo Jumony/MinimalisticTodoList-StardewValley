@@ -22,6 +22,7 @@ public class TodoMenu : IClickableMenu
     private const int InputAreaHeight = 50;
 
     private const float exitButtonScale = 4f;
+    private const float deleteTaskButtonScale = 2f;
 
     private ClickableTextureComponent exitButton;
     
@@ -120,6 +121,15 @@ public class TodoMenu : IClickableMenu
                 b.DrawString(Game1.smallFont, display,
                     new Vector2(xPositionOnScreen + Padding + 16, itemY),
                     Game1.textColor);
+                
+                // Delete Task Button
+                ClickableTextureComponent deleteTaskButton = new ClickableTextureComponent("delete",
+                    new Rectangle(xPositionOnScreen + width - 48, itemY + 8, (int)(12 * deleteTaskButtonScale), (int)(12 * deleteTaskButtonScale)),  // 12x12 texture * 3f scale = 36 pixels
+                    null,
+                    "Delete",
+                    Game1.mouseCursors,
+                    new Rectangle(338, 494, 12, 12), deleteTaskButtonScale);
+                deleteTaskButton.draw(b);
                 
                 itemY += ItemHeight;
             }
