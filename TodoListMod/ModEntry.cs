@@ -10,6 +10,7 @@ namespace SMAPIMod
     /// <summary>The mod entry point.</summary>
     internal sealed class ModEntry : Mod
     {
+        private TodoListData Data = null;
         /*********
          ** Public methods
          *********/
@@ -18,8 +19,12 @@ namespace SMAPIMod
         public override void Entry(IModHelper helper)
         {
             helper.Events.Input.ButtonPressed += this.OnButtonPressed;
-        }
+            helper.Events.GameLoop.SaveLoaded += this.OnSaveLoaded;
+            helper.Events.GameLoop.Saving += this.OnSaving;
 
+            this.Data = helper.Data.ReadSaveData<TodoListData>("todo-list-data") ??
+                        new TodoListData{ tasks = new List<string>() };
+        }
 
         /*********
          ** Private methods
@@ -40,6 +45,16 @@ namespace SMAPIMod
             {
                 Game1.activeClickableMenu = new TodoMenu();
             }
+        }
+
+        public void OnSaveLoaded(object? sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void OnSaving(object? sender, EventArgs e)
+        {
+            throw new NotImplementedException();
         }
     }
 }
