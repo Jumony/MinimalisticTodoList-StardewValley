@@ -43,11 +43,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\Coding\\C#\\SMAPIMod\\SMAPIMod\\TodoListMod\\TodoListMod.csproj",
-      "projectName": "TodoListMod",
-      "projectPath": "F:\\Coding\\C#\\SMAPIMod\\SMAPIMod\\TodoListMod\\TodoListMod.csproj",
+      "projectUniqueName": "F:\\Coding\\C#\\SMAPIMod\\SMAPIMod\\MinimalisticTodoList\\MinimalisticTodoList.csproj",
+      "projectName": "MinimalisticTodoList",
+      "projectPath": "F:\\Coding\\C#\\SMAPIMod\\SMAPIMod\\MinimalisticTodoList\\MinimalisticTodoList.csproj",
       "packagesPath": "C:\\Users\\fireb\\.nuget\\packages\\",
-      "outputPath": "F:\\Coding\\C#\\SMAPIMod\\SMAPIMod\\TodoListMod\\obj\\",
+      "outputPath": "F:\\Coding\\C#\\SMAPIMod\\SMAPIMod\\MinimalisticTodoList\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\fireb\\AppData\\Roaming\\NuGet\\NuGet.Config"

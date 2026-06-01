@@ -1,4 +1,4 @@
-﻿namespace SMAPIMod;
+﻿namespace MinimalisticTodoList;
 
 public sealed class TodoListData
 {

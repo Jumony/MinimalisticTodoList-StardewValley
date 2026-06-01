@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TodoListMod", "TodoListMod\TodoListMod.csproj", "{1C133C8C-68F9-48F0-AD99-60AA15C69318}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MinimalisticTodoList", "MinimalisticTodoList\MinimalisticTodoList.csproj", "{1C133C8C-68F9-48F0-AD99-60AA15C69318}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

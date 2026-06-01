@@ -1,11 +1,8 @@
-﻿using System;
-using Microsoft.Xna.Framework;
-using StardewModdingAPI;
+﻿using StardewModdingAPI;
 using StardewModdingAPI.Events;
-using StardewModdingAPI.Utilities;
 using StardewValley;
 
-namespace SMAPIMod
+namespace MinimalisticTodoList
 {
     /// <summary>The mod entry point.</summary>
     internal sealed class ModEntry : Mod

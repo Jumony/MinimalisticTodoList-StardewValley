@@ -1,0 +1,8 @@
+F:\Coding\C#\SMAPIMod\SMAPIMod\MinimalisticTodoList\bin\Debug\net6.0\MinimalisticTodoList.deps.json
+F:\Coding\C#\SMAPIMod\SMAPIMod\MinimalisticTodoList\bin\Debug\net6.0\MinimalisticTodoList.dll
+F:\Coding\C#\SMAPIMod\SMAPIMod\MinimalisticTodoList\obj\Debug\net6.0\MinimalisticTodoList.csproj.AssemblyReference.cache
+F:\Coding\C#\SMAPIMod\SMAPIMod\MinimalisticTodoList\obj\Debug\net6.0\MinimalisticTodoList.GeneratedMSBuildEditorConfig.editorconfig
+F:\Coding\C#\SMAPIMod\SMAPIMod\MinimalisticTodoList\obj\Debug\net6.0\MinimalisticTodoList.AssemblyInfoInputs.cache
+F:\Coding\C#\SMAPIMod\SMAPIMod\MinimalisticTodoList\obj\Debug\net6.0\MinimalisticTodoList.AssemblyInfo.cs
+F:\Coding\C#\SMAPIMod\SMAPIMod\MinimalisticTodoList\obj\Debug\net6.0\MinimalisticTodoList.csproj.CoreCompileInputs.cache
+F:\Coding\C#\SMAPIMod\SMAPIMod\MinimalisticTodoList\obj\Debug\net6.0\MinimalisticTodoList.dll

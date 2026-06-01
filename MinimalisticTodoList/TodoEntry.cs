@@ -1,6 +1,6 @@
 ﻿using StardewValley.Menus;
 
-namespace SMAPIMod;
+namespace MinimalisticTodoList;
 
 public struct TodoEntry
 {
