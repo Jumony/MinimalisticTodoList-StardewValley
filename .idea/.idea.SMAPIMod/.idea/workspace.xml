@@ -8,7 +8,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a7baf7b4-ec5c-47c4-9219-4d2ac66c1a06" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.SMAPIMod/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SMAPIMod/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TodoListMod/TodoMenu.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TodoListMod/TodoMenu.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TodoListMod/bin/Debug/net6.0/TodoListMod 1.0.0.zip" beforeDir="false" afterPath="$PROJECT_DIR$/TodoListMod/bin/Debug/net6.0/TodoListMod 1.0.0.zip" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TodoListMod/bin/Debug/net6.0/TodoListMod.dll" beforeDir="false" afterPath="$PROJECT_DIR$/TodoListMod/bin/Debug/net6.0/TodoListMod.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TodoListMod/obj/Debug/net6.0/TodoListMod.dll" beforeDir="false" afterPath="$PROJECT_DIR$/TodoListMod/obj/Debug/net6.0/TodoListMod.dll" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -93,7 +97,7 @@
       <workItem from="1780077279769" duration="7560000" />
       <workItem from="1780111956110" duration="2575000" />
       <workItem from="1780242283319" duration="3425000" />
-      <workItem from="1780253969952" duration="11692000" />
+      <workItem from="1780253969952" duration="12104000" />
     </task>
     <servers />
   </component>

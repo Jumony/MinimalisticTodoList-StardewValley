@@ -11,6 +11,11 @@ using StardewValley.Menus;
 
 namespace SMAPIMod;
 
+/*
+ * Reminder to self to mention in README:
+ * - Text input limit is 27 characters to prevent overflow and ensure delete button fits
+ */
+
 public class TodoMenu : IClickableMenu
 {
     private readonly List<string> _todos = new();
