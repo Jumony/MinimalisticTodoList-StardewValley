@@ -2,5 +2,5 @@
 
 public sealed class TodoListData
 {
-    public List<string> tasks { get; set; }
+    public List<string> Tasks { get; set; } = new List<string>();
 }

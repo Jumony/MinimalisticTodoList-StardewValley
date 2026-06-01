@@ -35,10 +35,17 @@ public class TodoMenu : IClickableMenu
     private readonly ClickableTextureComponent _exitButton;
     private readonly List<ClickableTextureComponent> _deleteTaskButtons = new();
     
-    private int _scrollOffset = 0; 
- 
-    public TodoMenu() : base(0, 0, 420, 500)
+    private int _scrollOffset = 0;
+
+    private readonly TodoListData Data;
+    
+    public TodoMenu(TodoListData data) : base(0, 0, 420, 500)
     {
+        this.Data = data;
+        
+        this.Data.Tasks ??= new List<string>();
+        _todos = this.Data.Tasks;
+        
         xPositionOnScreen = (Game1.uiViewport.Width - width) / 2;
         yPositionOnScreen = (Game1.uiViewport.Height - height) / 2;
  
