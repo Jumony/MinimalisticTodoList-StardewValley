@@ -33,10 +33,7 @@ namespace MinimalisticTodoList
             // ignore if player hasn't loaded a save yet
             if (!Context.IsWorldReady)
                 return;
-
-            // print button presses to the console window
-            this.Monitor.Log($"{Game1.player.Name} pressed {e.Button}.", LogLevel.Debug);
-
+            
             if (e.Button == SButton.L && Game1.activeClickableMenu == null)
             {
                 Game1.activeClickableMenu = new TodoMenu(this.Data);
